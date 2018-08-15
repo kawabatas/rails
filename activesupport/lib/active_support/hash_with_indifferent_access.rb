@@ -306,10 +306,10 @@ module ActiveSupport
       dup.tap { |hash| hash.transform_values!(*args, &block) }
     end
 
-    def transform_keys(*args, &block)
-      return to_enum(:transform_keys) unless block_given?
-      dup.tap { |hash| hash.transform_keys!(*args, &block) }
-    end
+    # def transform_keys(*args, &block)
+    #   return to_enum(:transform_keys) unless block_given?
+    #   dup.tap { |hash| hash.transform_keys!(*args, &block) }
+    # end
 
     def transform_keys!
       return enum_for(:transform_keys!) { size } unless block_given?
